@@ -63,9 +63,12 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* |  Basic   |       $25.80       |
+| *Azure Service Bus*   |    Basic     |      $0.01        |
+| *App storage*                  |    Basic     |       $0.11       |
+| *App service*                 |   Basic      |        $22.14      |
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+
+My architecture selection for the Azure Function was made for a resonable, inexpensive tier cost. In order to make a basic free tier trigger queue, the best solution was to configure it within the resouorce group. In addition for the web app, I configured it with the least expeisnve tier due to the small data being stored. I wanted to publish both the web app and the function app separately since they are referring to separate folders within the project. First publishing the web app verified the frontend was working first, then my next approach was to make the service bus app function with the notification queue trigger.
